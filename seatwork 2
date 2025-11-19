@@ -1,0 +1,58 @@
+class Product {
+    private String name;
+    private double price;
+    private int quantity;
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public double getTotalAmount() {
+        return price * quantity;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+        Product product = new Product();
+
+        System.out.print("Enter product name: ");
+        product.setName(scanner.nextLine());
+
+        System.out.print("Enter price: ");
+        product.setPrice(scanner.nextDouble());
+
+        System.out.print("Enter quantity: ");
+        product.setQuantity(scanner.nextInt());
+
+        System.out.println("\n--- PRODUCT SUMMARY ---");
+        System.out.println("Product Name: " + product.getName());
+        System.out.println("Price: " + product.getPrice());
+        System.out.println("Quantity: " + product.getQuantity());
+        System.out.println("Total Amount: " + product.getTotalAmount());
+
+        scanner.close();
+    }
+}
